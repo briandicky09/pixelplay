@@ -14,7 +14,6 @@ Setiap folder adalah proyek yang berdiri sendiri dan memiliki dependency serta c
 
 - [README — React](./react/README.md)
 - [README — Tailwind](./tailwind/README.md)
-- [README — Laravel](./laravel/README.md)
 
 ## Ringkasan Tiap Bagian
 
@@ -61,7 +60,4 @@ Proyek ini dikembangkan bertahap:
 
 Ketiga bagian saat ini belum terhubung satu sama lain secara otomatis. Front-end React masih menggunakan data statisnya sendiri dan belum memanggil API dari Laravel. Integrasi penuh (React mengonsumsi REST API Laravel) merupakan langkah pengembangan selanjutnya.
 
-```
-
-**Catatan:** aku sengaja menghilangkan angka **“Laravel 8.2+”** karena belum ada kepastian versi Laravel project-mu. Jadi README tidak berisiko menampilkan versi yang salah.
 ```
