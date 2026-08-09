@@ -6,15 +6,15 @@ Marketplace game digital (PC & konsol) — dengan pengiriman instan dan pembayar
 
 | Folder | Deskripsi | Stack |
 | --- | --- | --- |
-| [`pixelplay-tailwind/`](./pixelplay-tailwind) | Landing page statis (marketing page) | Vite + Tailwind CSS v4 + Vanilla JS |
-| [`pixelplay-react/`](./pixelplay-react) | Storefront/katalog game interaktif (data statis, siap deploy ke Vercel) | React 18 + Vite + React Router + Tailwind CSS v4 |
-| [`pixelplay-laravel/`](./pixelplay-laravel) | Backend & REST API — autentikasi admin, panel admin CRUD, API publik | Laravel 8.2+ / PHP + MySQL |
+| [`tailwind/`](./tailwind) | Landing page statis (marketing page) | Vite + Tailwind CSS v4 + Vanilla JS |
+| [`react/`](./react) | Storefront/katalog game interaktif (data statis, siap deploy ke Vercel) | React 18 + Vite + React Router + Tailwind CSS v4 |
+| [`laravel/`](./laravel) | Backend & REST API — autentikasi admin, panel admin CRUD, API publik | Laravel 8.2+ / PHP + MySQL |
 
 Setiap folder adalah proyek yang berdiri sendiri (punya `package.json`/`composer.json`, dependency, dan cara menjalankan masing-masing). Lihat README di tiap folder untuk instruksi instalasi dan detail teknis lengkap:
 
-- [README — pixelplay-laravel](./pixelplay-laravel/README.md)
-- [README — pixelplay-react](./pixelplay-react/README.md)
-- [README — pixelplay-tailwind](./pixelplay-tailwind/README.md)
+- [README — laravel](./laravel/README.md)
+- [README — react](./react/README.md)
+- [README — tailwind](./tailwind/README.md)
 
 ## Ringkasan Tiap Bagian
 
