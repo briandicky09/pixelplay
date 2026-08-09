@@ -12,7 +12,6 @@ Marketplace game digital (PC & konsol) — dengan pengiriman instan dan pembayar
 
 Setiap folder adalah proyek yang berdiri sendiri (punya `package.json`/`composer.json`, dependency, dan cara menjalankan masing-masing). Lihat README di tiap folder untuk instruksi instalasi dan detail teknis lengkap:
 
-- [README — laravel](./laravel/README.md)
 - [README — react](./react/README.md)
 - [README — tailwind](./tailwind/README.md)
 
