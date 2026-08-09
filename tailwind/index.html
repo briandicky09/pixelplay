@@ -1,0 +1,648 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PixelPlay — Marketplace Game Digital</title>
+  <meta name="description" content="PixelPlay adalah marketplace digital terkurasi untuk game PC dan konsol, dengan pengiriman instan dan pembayaran aman." />
+  <link rel="stylesheet" href="/src/input.css" />
+</head>
+<body class="overflow-x-hidden">
+
+  <!-- ===================== NAVBAR ===================== -->
+  <header id="navbar" class="fixed top-0 inset-x-0 z-50 border-b border-transparent bg-charcoal-950/85 backdrop-blur-md transition-all duration-300">
+    <nav class="shell h-16 flex items-center justify-between" aria-label="Navigasi utama">
+      <a href="#home" class="flex items-center gap-2 group">
+        <img src="/src/assets/logo-icon.png" alt="Logo PixelPlay" class="h-8 w-8 object-contain" width="256" height="256" />
+        <span class="text-white font-display font-bold text-lg tracking-tight">PixelPlay</span>
+      </a>
+
+      <ul class="hidden md:flex items-center gap-8">
+        <li><a href="#home" class="nav-link">Beranda</a></li>
+        <li><a href="#featured" class="nav-link">Game Unggulan</a></li>
+        <li><a href="#genres" class="nav-link">Genre</a></li>
+        <li><a href="#latest" class="nav-link">Rilis Terbaru</a></li>
+        <li><a href="#why" class="nav-link">Tentang</a></li>
+        <li><a href="#footer" class="nav-link">Kontak</a></li>
+      </ul>
+
+      <div class="hidden md:flex items-center gap-3">
+        <button type="button" class="btn-ghost">Masuk</button>
+        <a href="#featured" class="btn-primary">Jelajahi Game</a>
+      </div>
+
+      <!-- Mobile toggle -->
+      <button id="menuToggle" type="button" aria-label="Buka menu" aria-expanded="false" aria-controls="mobileMenu" class="md:hidden text-slate-300 hover:text-white p-2">
+        <svg id="iconOpen" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg id="iconClose" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="md:hidden hidden border-t border-charcoal-700 bg-charcoal-950 px-6 py-6 space-y-4">
+      <a href="#home" class="block nav-link">Beranda</a>
+      <a href="#featured" class="block nav-link">Game Unggulan</a>
+      <a href="#genres" class="block nav-link">Genre</a>
+      <a href="#latest" class="block nav-link">Rilis Terbaru</a>
+      <a href="#why" class="block nav-link">Tentang</a>
+      <a href="#footer" class="block nav-link">Kontak</a>
+      <div class="flex gap-3 pt-3">
+        <button type="button" class="btn-secondary flex-1">Masuk</button>
+        <a href="#featured" class="btn-primary flex-1">Jelajahi Game</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== HERO SLIDER ===================== -->
+  <section id="home" class="relative overflow-hidden bg-grid-fade pt-28 pb-14 lg:pt-32 lg:pb-20">
+    <div class="shell">
+      <div class="mb-5 flex items-end justify-between gap-4">
+        <h1 class="font-display text-2xl font-bold text-white sm:text-3xl">Game Unggulan Minggu Ini</h1>
+        <span id="heroCounter" class="hidden text-xs text-slate-500 tabular-nums sm:block">01 / 06</span>
+      </div>
+
+      <div
+        id="heroSlider"
+        class="group relative border border-charcoal-700 bg-charcoal-900 shadow-card outline-none"
+        role="region"
+        aria-roledescription="carousel"
+        aria-label="Game unggulan PixelPlay"
+        tabindex="0"
+      >
+        <!-- Slides -->
+        <div id="heroTrack" class="relative h-[560px] sm:h-[600px] lg:h-[460px]">
+
+          <!-- Slide 1 : Grand Theft Auto VI -->
+          <div class="hero-slide absolute inset-0 grid grid-rows-[220px_1fr] sm:grid-rows-[300px_1fr] lg:grid-cols-[1fr_380px] lg:grid-rows-1 transition-opacity duration-700 ease-out opacity-100" data-index="0">
+            <div class="relative overflow-hidden">
+              <img src="/src/assets/games/gta6.jpg" alt="Cover Grand Theft Auto VI" class="absolute inset-0 size-full object-cover" loading="eager" />
+              <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-charcoal-950/70 via-transparent to-transparent lg:bg-gradient-to-r lg:from-transparent lg:via-transparent lg:to-charcoal-900/85"></div>
+              <span class="absolute left-0 top-0 z-10 inline-flex items-center bg-violet-500 text-white text-sm font-bold px-2.5 py-1">TERLARIS</span>
+            </div>
+            <div class="relative flex flex-col gap-3 overflow-hidden bg-charcoal-900 px-5 py-5 sm:px-6">
+              <h2 class="font-display text-xl font-bold text-white sm:text-2xl">Grand Theft Auto VI</h2>
+              <p class="text-sm"><span class="text-emerald-400">Sangat Positif</span> <span class="text-slate-500">(482.910 ulasan)</span></p>
+              <p class="mt-1 text-sm leading-relaxed text-slate-300">Kembali ke Vice City dengan skala dunia terbuka terbesar yang pernah dibangun.</p>
+              <p class="text-sm leading-relaxed text-slate-500">Dua protagonis, ekonomi kriminal yang hidup, dan sistem simulasi warga membuat setiap sesi terasa berbeda.</p>
+              <dl class="mt-2 space-y-1 text-xs text-slate-500">
+                <div class="flex gap-2"><dt>Kategori</dt><dd class="text-slate-300">Aksi Dunia Terbuka</dd></div>
+                <div class="flex gap-2"><dt>Platform</dt><dd class="truncate text-slate-300">PS5 · Xbox Series X|S · PC</dd></div>
+                <div class="flex gap-2"><dt>Rating</dt><dd class="text-slate-300">★ 4.9 / 5.0</dd></div>
+              </dl>
+              <div class="mt-auto flex flex-wrap items-center gap-3 pt-3">
+                <a href="#featured" class="btn-primary px-5 py-2.5 text-sm">Lihat Detail</a>
+                <span class="text-sm font-semibold text-white">Rp999.000</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 : Cyberpunk 2077 -->
+          <div class="hero-slide absolute inset-0 grid grid-rows-[220px_1fr] sm:grid-rows-[300px_1fr] lg:grid-cols-[1fr_380px] lg:grid-rows-1 transition-opacity duration-700 ease-out opacity-0 pointer-events-none" data-index="1">
+            <div class="relative overflow-hidden">
+              <img src="/src/assets/games/cyberpunk2077.jpg" alt="Cover Cyberpunk 2077" class="absolute inset-0 size-full object-cover" loading="lazy" />
+              <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-charcoal-950/70 via-transparent to-transparent lg:bg-gradient-to-r lg:from-transparent lg:via-transparent lg:to-charcoal-900/85"></div>
+              <span class="absolute left-0 top-0 z-10 inline-flex items-center bg-sale-500 text-white text-sm font-bold px-2.5 py-1">DISKON 50%</span>
+            </div>
+            <div class="relative flex flex-col gap-3 overflow-hidden bg-charcoal-900 px-5 py-5 sm:px-6">
+              <h2 class="font-display text-xl font-bold text-white sm:text-2xl">Cyberpunk 2077</h2>
+              <p class="text-sm"><span class="text-emerald-400">Kebanyakan Positif</span> <span class="text-slate-500">(311.204 ulasan)</span></p>
+              <p class="mt-1 text-sm leading-relaxed text-slate-300">RPG aksi naratif di Night City yang penuh implan dan intrik korporat.</p>
+              <p class="text-sm leading-relaxed text-slate-500">Sistem build senjata, cyberware, dan quickhack memberi kebebasan bermain dari infiltrasi senyap hingga serangan frontal.</p>
+              <dl class="mt-2 space-y-1 text-xs text-slate-500">
+                <div class="flex gap-2"><dt>Kategori</dt><dd class="text-slate-300">RPG Aksi</dd></div>
+                <div class="flex gap-2"><dt>Platform</dt><dd class="truncate text-slate-300">PC · PS5 · Xbox Series X|S</dd></div>
+                <div class="flex gap-2"><dt>Rating</dt><dd class="text-slate-300">★ 4.7 / 5.0</dd></div>
+              </dl>
+              <div class="mt-auto flex flex-wrap items-center gap-3 pt-3">
+                <a href="#featured" class="btn-primary px-5 py-2.5 text-sm">Lihat Detail</a>
+                <span class="text-sm"><span class="text-slate-500 line-through mr-2">Rp549.000</span><span class="font-semibold text-white">Rp274.500</span></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 : Forza Horizon 6 -->
+          <div class="hero-slide absolute inset-0 grid grid-rows-[220px_1fr] sm:grid-rows-[300px_1fr] lg:grid-cols-[1fr_380px] lg:grid-rows-1 transition-opacity duration-700 ease-out opacity-0 pointer-events-none" data-index="2">
+            <div class="relative overflow-hidden">
+              <img src="/src/assets/games/forza6.jpg" alt="Cover Forza Horizon 6" class="absolute inset-0 size-full object-cover" loading="lazy" />
+              <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-charcoal-950/70 via-transparent to-transparent lg:bg-gradient-to-r lg:from-transparent lg:via-transparent lg:to-charcoal-900/85"></div>
+              <span class="absolute left-0 top-0 z-10 inline-flex items-center bg-sale-500 text-white text-sm font-bold px-2.5 py-1">DISKON 20%</span>
+            </div>
+            <div class="relative flex flex-col gap-3 overflow-hidden bg-charcoal-900 px-5 py-5 sm:px-6">
+              <h2 class="font-display text-xl font-bold text-white sm:text-2xl">Forza Horizon 6</h2>
+              <p class="text-sm"><span class="text-emerald-400">Sangat Positif</span> <span class="text-slate-500">(198.552 ulasan)</span></p>
+              <p class="mt-1 text-sm leading-relaxed text-slate-300">Festival balap dunia terbuka dengan ratusan mobil dan cuaca dinamis.</p>
+              <p class="text-sm leading-relaxed text-slate-500">Editor tuning mendalam, event komunitas mingguan, serta mode kooperatif membuat progres terasa mulus.</p>
+              <dl class="mt-2 space-y-1 text-xs text-slate-500">
+                <div class="flex gap-2"><dt>Kategori</dt><dd class="text-slate-300">Balap</dd></div>
+                <div class="flex gap-2"><dt>Platform</dt><dd class="truncate text-slate-300">Xbox Series X|S · PC</dd></div>
+                <div class="flex gap-2"><dt>Rating</dt><dd class="text-slate-300">★ 4.8 / 5.0</dd></div>
+              </dl>
+              <div class="mt-auto flex flex-wrap items-center gap-3 pt-3">
+                <a href="#featured" class="btn-primary px-5 py-2.5 text-sm">Lihat Detail</a>
+                <span class="text-sm"><span class="text-slate-500 line-through mr-2">Rp749.000</span><span class="font-semibold text-white">Rp599.200</span></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 4 : osu! -->
+          <div class="hero-slide absolute inset-0 grid grid-rows-[220px_1fr] sm:grid-rows-[300px_1fr] lg:grid-cols-[1fr_380px] lg:grid-rows-1 transition-opacity duration-700 ease-out opacity-0 pointer-events-none" data-index="3">
+            <div class="relative overflow-hidden">
+              <img src="/src/assets/games/osu.jpg" alt="Cover osu!" class="absolute inset-0 size-full object-cover" loading="lazy" />
+              <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-charcoal-950/70 via-transparent to-transparent lg:bg-gradient-to-r lg:from-transparent lg:via-transparent lg:to-charcoal-900/85"></div>
+              <span class="absolute left-0 top-0 z-10 inline-flex items-center bg-emerald-500 text-charcoal-950 text-sm font-bold px-2.5 py-1">GRATIS</span>
+            </div>
+            <div class="relative flex flex-col gap-3 overflow-hidden bg-charcoal-900 px-5 py-5 sm:px-6">
+              <h2 class="font-display text-xl font-bold text-white sm:text-2xl">osu!</h2>
+              <p class="text-sm"><span class="text-emerald-400">Kebanyakan Positif</span> <span class="text-slate-500">(84.310 ulasan)</span></p>
+              <p class="mt-1 text-sm leading-relaxed text-slate-300">Ritme presisi tinggi dengan peta komunitas tanpa batas.</p>
+              <p class="text-sm leading-relaxed text-slate-500">Katalog beatmap buatan komunitas berjumlah jutaan, lengkap dengan papan peringkat global.</p>
+              <dl class="mt-2 space-y-1 text-xs text-slate-500">
+                <div class="flex gap-2"><dt>Kategori</dt><dd class="text-slate-300">Ritme</dd></div>
+                <div class="flex gap-2"><dt>Platform</dt><dd class="truncate text-slate-300">PC</dd></div>
+                <div class="flex gap-2"><dt>Rating</dt><dd class="text-slate-300">★ 4.6 / 5.0</dd></div>
+              </dl>
+              <div class="mt-auto flex flex-wrap items-center gap-3 pt-3">
+                <a href="#featured" class="btn-primary px-5 py-2.5 text-sm">Lihat Detail</a>
+                <span class="text-sm font-semibold text-white">Gratis</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 5 : Warcraft III: Reign of Chaos -->
+          <div class="hero-slide absolute inset-0 grid grid-rows-[220px_1fr] sm:grid-rows-[300px_1fr] lg:grid-cols-[1fr_380px] lg:grid-rows-1 transition-opacity duration-700 ease-out opacity-0 pointer-events-none" data-index="4">
+            <div class="relative overflow-hidden">
+              <img src="/src/assets/games/warcraft3.jpg" alt="Cover Warcraft III: Reign of Chaos" class="absolute inset-0 size-full object-cover" loading="lazy" />
+              <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-charcoal-950/70 via-transparent to-transparent lg:bg-gradient-to-r lg:from-transparent lg:via-transparent lg:to-charcoal-900/85"></div>
+              <span class="absolute left-0 top-0 z-10 inline-flex items-center bg-sale-500 text-white text-sm font-bold px-2.5 py-1">DISKON 50%</span>
+            </div>
+            <div class="relative flex flex-col gap-3 overflow-hidden bg-charcoal-900 px-5 py-5 sm:px-6">
+              <h2 class="font-display text-xl font-bold text-white sm:text-2xl">Warcraft III: Reign of Chaos</h2>
+              <p class="text-sm"><span class="text-emerald-400">Sangat Positif</span> <span class="text-slate-500">(72.884 ulasan)</span></p>
+              <p class="mt-1 text-sm leading-relaxed text-slate-300">Strategi real-time klasik yang melahirkan seluruh genre MOBA.</p>
+              <p class="text-sm leading-relaxed text-slate-500">Kampanye naratifnya menjadi fondasi dunia Azeroth, sementara editor peta bawaannya melahirkan genre modern.</p>
+              <dl class="mt-2 space-y-1 text-xs text-slate-500">
+                <div class="flex gap-2"><dt>Kategori</dt><dd class="text-slate-300">Strategi</dd></div>
+                <div class="flex gap-2"><dt>Platform</dt><dd class="truncate text-slate-300">PC</dd></div>
+                <div class="flex gap-2"><dt>Rating</dt><dd class="text-slate-300">★ 4.8 / 5.0</dd></div>
+              </dl>
+              <div class="mt-auto flex flex-wrap items-center gap-3 pt-3">
+                <a href="#featured" class="btn-primary px-5 py-2.5 text-sm">Lihat Detail</a>
+                <span class="text-sm"><span class="text-slate-500 line-through mr-2">Rp299.000</span><span class="font-semibold text-white">Rp149.500</span></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 6 : Red Dead Redemption II -->
+          <div class="hero-slide absolute inset-0 grid grid-rows-[220px_1fr] sm:grid-rows-[300px_1fr] lg:grid-cols-[1fr_380px] lg:grid-rows-1 transition-opacity duration-700 ease-out opacity-0 pointer-events-none" data-index="5">
+            <div class="relative overflow-hidden">
+              <img src="/src/assets/games/rdr2.jpg" alt="Cover Red Dead Redemption II" class="absolute inset-0 size-full object-cover" loading="lazy" />
+              <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-charcoal-950/70 via-transparent to-transparent lg:bg-gradient-to-r lg:from-transparent lg:via-transparent lg:to-charcoal-900/85"></div>
+              <span class="absolute left-0 top-0 z-10 inline-flex items-center bg-violet-500 text-white text-sm font-bold px-2.5 py-1">PILIHAN EDITOR</span>
+            </div>
+            <div class="relative flex flex-col gap-3 overflow-hidden bg-charcoal-900 px-5 py-5 sm:px-6">
+              <h2 class="font-display text-xl font-bold text-white sm:text-2xl">Red Dead Redemption II</h2>
+              <p class="text-sm"><span class="text-emerald-400">Sangat Positif</span> <span class="text-slate-500">(566.732 ulasan)</span></p>
+              <p class="mt-1 text-sm leading-relaxed text-slate-300">Epik koboi dengan detail dunia dan penceritaan kelas atas.</p>
+              <p class="text-sm leading-relaxed text-slate-500">Dunianya dipenuhi detail — dari perawatan kuda hingga reaksi warga terhadap reputasimu.</p>
+              <dl class="mt-2 space-y-1 text-xs text-slate-500">
+                <div class="flex gap-2"><dt>Kategori</dt><dd class="text-slate-300">Aksi Petualangan</dd></div>
+                <div class="flex gap-2"><dt>Platform</dt><dd class="truncate text-slate-300">PC · PS5 · Xbox Series X|S</dd></div>
+                <div class="flex gap-2"><dt>Rating</dt><dd class="text-slate-300">★ 4.9 / 5.0</dd></div>
+              </dl>
+              <div class="mt-auto flex flex-wrap items-center gap-3 pt-3">
+                <a href="#featured" class="btn-primary px-5 py-2.5 text-sm">Lihat Detail</a>
+                <span class="text-sm font-semibold text-white">Rp649.000</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Prev / Next -->
+        <button id="heroPrev" type="button" aria-label="Slide sebelumnya" class="absolute left-0 top-0 z-20 flex h-full w-12 items-center justify-center bg-charcoal-950/0 text-slate-300 opacity-0 transition-all duration-200 hover:bg-charcoal-950/60 hover:text-white group-hover:opacity-100 lg:w-14">
+          <svg xmlns="http://www.w3.org/2000/svg" class="size-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg>
+        </button>
+        <button id="heroNext" type="button" aria-label="Slide berikutnya" class="absolute right-0 top-0 z-20 flex h-full w-12 items-center justify-center bg-charcoal-950/0 text-slate-300 opacity-0 transition-all duration-200 hover:bg-charcoal-950/60 hover:text-white group-hover:opacity-100 lg:w-14">
+          <svg xmlns="http://www.w3.org/2000/svg" class="size-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+        </button>
+
+        <!-- Progress bar -->
+        <div class="absolute inset-x-0 bottom-0 h-0.5 w-full bg-charcoal-700" aria-hidden="true">
+          <div id="heroProgress" class="h-full bg-violet-500" style="width: 0%"></div>
+        </div>
+      </div>
+
+      <!-- Dots -->
+      <ul id="heroDots" class="mt-5 flex items-center justify-center gap-2" role="tablist" aria-label="Pilih slide">
+        <li><button type="button" role="tab" data-goto="0" aria-selected="true" aria-label="Slide 1: Grand Theft Auto VI" class="hero-dot h-2 w-8 bg-violet-500 transition-all duration-300"></button></li>
+        <li><button type="button" role="tab" data-goto="1" aria-selected="false" aria-label="Slide 2: Cyberpunk 2077" class="hero-dot h-2 w-2.5 bg-charcoal-600 hover:bg-slate-500 transition-all duration-300"></button></li>
+        <li><button type="button" role="tab" data-goto="2" aria-selected="false" aria-label="Slide 3: Forza Horizon 6" class="hero-dot h-2 w-2.5 bg-charcoal-600 hover:bg-slate-500 transition-all duration-300"></button></li>
+        <li><button type="button" role="tab" data-goto="3" aria-selected="false" aria-label="Slide 4: osu!" class="hero-dot h-2 w-2.5 bg-charcoal-600 hover:bg-slate-500 transition-all duration-300"></button></li>
+        <li><button type="button" role="tab" data-goto="4" aria-selected="false" aria-label="Slide 5: Warcraft III: Reign of Chaos" class="hero-dot h-2 w-2.5 bg-charcoal-600 hover:bg-slate-500 transition-all duration-300"></button></li>
+        <li><button type="button" role="tab" data-goto="5" aria-selected="false" aria-label="Slide 6: Red Dead Redemption II" class="hero-dot h-2 w-2.5 bg-charcoal-600 hover:bg-slate-500 transition-all duration-300"></button></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===================== FEATURED GAMES ===================== -->
+  <section id="featured" class="py-24 border-t border-charcoal-800/60">
+    <div class="shell">
+      <div class="reveal flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-12">
+        <div class="max-w-xl">
+          <span class="eyebrow">Katalog Resmi</span>
+          <h2 class="section-heading mt-2">Game unggulan PixelPlay</h2>
+          <p class="mt-3 text-slate-400">Enam judul pilihan yang paling banyak dicari pemain PixelPlay bulan ini, lintas genre dan platform.</p>
+        </div>
+        <a href="#latest" class="btn-ghost shrink-0">Lihat rilis terbaru →</a>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article class="reveal card-soft group flex h-full flex-col">
+          <div class="relative aspect-video w-full overflow-hidden">
+            <img src="/src/assets/games/gta6.jpg" alt="Cover Grand Theft Auto VI" class="size-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+          </div>
+          <div class="flex flex-1 flex-col p-5">
+            <div class="flex items-start justify-between gap-3">
+              <h3 class="font-display font-semibold text-white">Grand Theft Auto VI</h3>
+              <span class="shrink-0 text-sm text-emerald-400">★ 4.9</span>
+            </div>
+            <p class="mt-1 text-sm text-slate-500">Aksi Dunia Terbuka</p>
+            <ul class="mt-3 flex flex-wrap gap-2">
+              <li class="chip">PS5</li><li class="chip">Xbox Series X|S</li><li class="chip">PC</li>
+            </ul>
+            <div class="mt-auto flex items-end justify-between pt-5">
+              <span class="font-semibold text-white">Rp999.000</span>
+              <span class="text-sm text-slate-400 transition-colors group-hover:text-violet-400">Detail →</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="reveal card-soft group flex h-full flex-col">
+          <div class="relative aspect-video w-full overflow-hidden">
+            <img src="/src/assets/games/cyberpunk2077.jpg" alt="Cover Cyberpunk 2077" class="size-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+            <span class="absolute left-0 top-0 inline-flex items-center bg-sale-500 text-white text-sm font-bold px-2.5 py-1">-50%</span>
+          </div>
+          <div class="flex flex-1 flex-col p-5">
+            <div class="flex items-start justify-between gap-3">
+              <h3 class="font-display font-semibold text-white">Cyberpunk 2077</h3>
+              <span class="shrink-0 text-sm text-emerald-400">★ 4.7</span>
+            </div>
+            <p class="mt-1 text-sm text-slate-500">RPG Aksi</p>
+            <ul class="mt-3 flex flex-wrap gap-2">
+              <li class="chip">PC</li><li class="chip">PS5</li><li class="chip">Xbox Series X|S</li>
+            </ul>
+            <div class="mt-auto flex items-end justify-between pt-5">
+              <div>
+                <p class="text-xs text-slate-500 line-through">Rp549.000</p>
+                <span class="font-semibold text-white">Rp274.500</span>
+              </div>
+              <span class="text-sm text-slate-400 transition-colors group-hover:text-violet-400">Detail →</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="reveal card-soft group flex h-full flex-col">
+          <div class="relative aspect-video w-full overflow-hidden">
+            <img src="/src/assets/games/forza6.jpg" alt="Cover Forza Horizon 6" class="size-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+            <span class="absolute left-0 top-0 inline-flex items-center bg-sale-500 text-white text-sm font-bold px-2.5 py-1">-20%</span>
+          </div>
+          <div class="flex flex-1 flex-col p-5">
+            <div class="flex items-start justify-between gap-3">
+              <h3 class="font-display font-semibold text-white">Forza Horizon 6</h3>
+              <span class="shrink-0 text-sm text-emerald-400">★ 4.8</span>
+            </div>
+            <p class="mt-1 text-sm text-slate-500">Balap</p>
+            <ul class="mt-3 flex flex-wrap gap-2">
+              <li class="chip">Xbox Series X|S</li><li class="chip">PC</li>
+            </ul>
+            <div class="mt-auto flex items-end justify-between pt-5">
+              <div>
+                <p class="text-xs text-slate-500 line-through">Rp749.000</p>
+                <span class="font-semibold text-white">Rp599.200</span>
+              </div>
+              <span class="text-sm text-slate-400 transition-colors group-hover:text-violet-400">Detail →</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="reveal card-soft group flex h-full flex-col">
+          <div class="relative aspect-video w-full overflow-hidden">
+            <img src="/src/assets/games/osu.jpg" alt="Cover osu!" class="size-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+            <span class="absolute left-0 top-0 inline-flex items-center bg-emerald-500 text-charcoal-950 text-sm font-bold px-2.5 py-1">GRATIS</span>
+          </div>
+          <div class="flex flex-1 flex-col p-5">
+            <div class="flex items-start justify-between gap-3">
+              <h3 class="font-display font-semibold text-white">osu!</h3>
+              <span class="shrink-0 text-sm text-emerald-400">★ 4.6</span>
+            </div>
+            <p class="mt-1 text-sm text-slate-500">Ritme</p>
+            <ul class="mt-3 flex flex-wrap gap-2">
+              <li class="chip">PC</li>
+            </ul>
+            <div class="mt-auto flex items-end justify-between pt-5">
+              <span class="font-semibold text-white">Gratis</span>
+              <span class="text-sm text-slate-400 transition-colors group-hover:text-violet-400">Detail →</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="reveal card-soft group flex h-full flex-col">
+          <div class="relative aspect-video w-full overflow-hidden">
+            <img src="/src/assets/games/warcraft3.jpg" alt="Cover Warcraft III: Reign of Chaos" class="size-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+            <span class="absolute left-0 top-0 inline-flex items-center bg-sale-500 text-white text-sm font-bold px-2.5 py-1">-50%</span>
+          </div>
+          <div class="flex flex-1 flex-col p-5">
+            <div class="flex items-start justify-between gap-3">
+              <h3 class="font-display font-semibold text-white">Warcraft III: Reign of Chaos</h3>
+              <span class="shrink-0 text-sm text-emerald-400">★ 4.8</span>
+            </div>
+            <p class="mt-1 text-sm text-slate-500">Strategi</p>
+            <ul class="mt-3 flex flex-wrap gap-2">
+              <li class="chip">PC</li>
+            </ul>
+            <div class="mt-auto flex items-end justify-between pt-5">
+              <div>
+                <p class="text-xs text-slate-500 line-through">Rp299.000</p>
+                <span class="font-semibold text-white">Rp149.500</span>
+              </div>
+              <span class="text-sm text-slate-400 transition-colors group-hover:text-violet-400">Detail →</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="reveal card-soft group flex h-full flex-col">
+          <div class="relative aspect-video w-full overflow-hidden">
+            <img src="/src/assets/games/rdr2.jpg" alt="Cover Red Dead Redemption II" class="size-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+          </div>
+          <div class="flex flex-1 flex-col p-5">
+            <div class="flex items-start justify-between gap-3">
+              <h3 class="font-display font-semibold text-white">Red Dead Redemption II</h3>
+              <span class="shrink-0 text-sm text-emerald-400">★ 4.9</span>
+            </div>
+            <p class="mt-1 text-sm text-slate-500">Aksi Petualangan</p>
+            <ul class="mt-3 flex flex-wrap gap-2">
+              <li class="chip">PC</li><li class="chip">PS5</li><li class="chip">Xbox Series X|S</li>
+            </ul>
+            <div class="mt-auto flex items-end justify-between pt-5">
+              <span class="font-semibold text-white">Rp649.000</span>
+              <span class="text-sm text-slate-400 transition-colors group-hover:text-violet-400">Detail →</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== POPULAR GENRES ===================== -->
+  <section id="genres" class="py-24 border-t border-charcoal-800/60 bg-charcoal-900/40">
+    <div class="shell">
+      <div class="reveal max-w-xl mb-12">
+        <span class="eyebrow">Jelajahi berdasarkan genre</span>
+        <h2 class="section-heading mt-2">Genre populer</h2>
+        <p class="mt-3 text-slate-400">Dari dunia terbuka hingga strategi klasik — temukan genre favoritmu di antara koleksi terkurasi PixelPlay.</p>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-5">
+        <a href="#featured" class="reveal card-soft p-6 flex flex-col gap-4">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M14.5 4.5L19.5 9.5M14.5 4.5L5 14 4 20l6-1 9.5-9.5M14.5 4.5l-2 2M17.5 7.5l-2 2" /></svg>
+          <div>
+            <h3 class="text-white font-medium">Aksi Dunia Terbuka</h3>
+            <p class="mt-1 text-sm text-slate-500">GTA VI, RDR2</p>
+          </div>
+        </a>
+        <a href="#featured" class="reveal card-soft p-6 flex flex-col gap-4">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z" /></svg>
+          <div>
+            <h3 class="text-white font-medium">RPG Aksi</h3>
+            <p class="mt-1 text-sm text-slate-500">Cyberpunk 2077</p>
+          </div>
+        </a>
+        <a href="#featured" class="reveal card-soft p-6 flex flex-col gap-4">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 17l4-10h8l4 10M4 17h16M4 17l-1 3M20 17l1 3" /></svg>
+          <div>
+            <h3 class="text-white font-medium">Balap</h3>
+            <p class="mt-1 text-sm text-slate-500">Forza Horizon 6</p>
+          </div>
+        </a>
+        <a href="#featured" class="reveal card-soft p-6 flex flex-col gap-4">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="8" stroke-linecap="round" stroke-linejoin="round" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 9l-4.5 1.5L9 15l4.5-1.5L15 9z" /></svg>
+          <div>
+            <h3 class="text-white font-medium">Ritme</h3>
+            <p class="mt-1 text-sm text-slate-500">osu!</p>
+          </div>
+        </a>
+        <a href="#featured" class="reveal card-soft p-6 flex flex-col gap-4">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19V9a3 3 0 013-3v0a3 3 0 013 3v10M9 19h6M6 19h12" /></svg>
+          <div>
+            <h3 class="text-white font-medium">Strategi</h3>
+            <p class="mt-1 text-sm text-slate-500">Warcraft III</p>
+          </div>
+        </a>
+        <a href="#featured" class="reveal card-soft p-6 flex flex-col gap-4">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="8" stroke-linecap="round" stroke-linejoin="round" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 9l-4.5 1.5L9 15l4.5-1.5L15 9z" /></svg>
+          <div>
+            <h3 class="text-white font-medium">Aksi Petualangan</h3>
+            <p class="mt-1 text-sm text-slate-500">RDR2</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== LATEST RELEASES ===================== -->
+  <section id="latest" class="py-24 border-t border-charcoal-800/60">
+    <div class="shell">
+      <div class="reveal mb-12">
+        <span class="eyebrow">Baru dirilis</span>
+        <h2 class="section-heading mt-2">Rilis &amp; pembaruan terbaru</h2>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article class="reveal card overflow-hidden group">
+          <div class="overflow-hidden">
+            <img src="/src/assets/games/gta6.jpg" alt="Cover Grand Theft Auto VI" class="w-full aspect-video object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+          </div>
+          <div class="p-5">
+            <h3 class="font-display font-semibold text-white">Grand Theft Auto VI</h3>
+            <p class="mt-1 text-sm text-slate-500">Aksi Dunia Terbuka · Rilis 19 Nov 2026</p>
+            <div class="mt-4 flex items-center justify-between">
+              <span class="text-white font-semibold">Rp999.000</span>
+              <span class="text-xs px-2.5 py-1 bg-emerald-500/15 text-emerald-400">Baru</span>
+            </div>
+          </div>
+        </article>
+        <article class="reveal card overflow-hidden group">
+          <div class="overflow-hidden">
+            <img src="/src/assets/games/forza6.jpg" alt="Cover Forza Horizon 6" class="w-full aspect-video object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+          </div>
+          <div class="p-5">
+            <h3 class="font-display font-semibold text-white">Forza Horizon 6</h3>
+            <p class="mt-1 text-sm text-slate-500">Balap · Rilis 8 Okt 2026</p>
+            <div class="mt-4 flex items-center justify-between">
+              <span class="text-white font-semibold">Rp599.200</span>
+              <span class="text-xs px-2.5 py-1 bg-emerald-500/15 text-emerald-400">Baru</span>
+            </div>
+          </div>
+        </article>
+        <article class="reveal card overflow-hidden group">
+          <div class="overflow-hidden">
+            <img src="/src/assets/games/cyberpunk2077.jpg" alt="Cover Cyberpunk 2077" class="w-full aspect-video object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+          </div>
+          <div class="p-5">
+            <h3 class="font-display font-semibold text-white">Cyberpunk 2077</h3>
+            <p class="mt-1 text-sm text-slate-500">RPG Aksi · Pembaruan besar</p>
+            <div class="mt-4 flex items-center justify-between">
+              <span class="text-white font-semibold">Rp274.500</span>
+              <span class="text-xs px-2.5 py-1 bg-charcoal-700 text-slate-400">Pembaruan</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== WHY CHOOSE PIXELPLAY ===================== -->
+  <section id="why" class="py-24 border-t border-charcoal-800/60 bg-charcoal-900/40">
+    <div class="shell">
+      <div class="reveal mb-12 max-w-2xl">
+        <span class="eyebrow">Mengapa PixelPlay</span>
+        <h2 class="section-heading mt-2">Dibuat untuk kamu yang cuma ingin main</h2>
+      </div>
+
+      <div class="grid sm:grid-cols-3 gap-6">
+        <div class="reveal card p-8">
+          <div class="w-11 h-11 bg-violet-500/15 text-violet-400 flex items-center justify-center mb-5">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <h3 class="text-white font-display font-semibold text-lg">Pengiriman Instan</h3>
+          <p class="mt-2 text-sm text-slate-400 leading-relaxed">Kode game langsung masuk ke akunmu begitu pembayaran selesai — tanpa menunggu email konfirmasi atau proses verifikasi manual.</p>
+        </div>
+        <div class="reveal card p-8">
+          <div class="w-11 h-11 bg-emerald-500/15 text-emerald-400 flex items-center justify-center mb-5">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+          </div>
+          <h3 class="text-white font-display font-semibold text-lg">Pembayaran Aman</h3>
+          <p class="mt-2 text-sm text-slate-400 leading-relaxed">Setiap transaksi diproses lewat sistem pembayaran terenkripsi, dan setiap kode bersumber langsung dari publisher dan distributor resmi.</p>
+        </div>
+        <div class="reveal card p-8">
+          <div class="w-11 h-11 bg-violet-500/15 text-violet-400 flex items-center justify-center mb-5">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+          </div>
+          <h3 class="text-white font-display font-semibold text-lg">Koleksi Game Terkurasi</h3>
+          <p class="mt-2 text-sm text-slate-400 leading-relaxed">Setiap listing ditinjau sebelum ditambahkan — tidak ada shovelware atau duplikat listing, hanya game yang layak menghuni koleksimu.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== COMMUNITY PICKS ===================== -->
+  <section id="community" class="py-24 border-t border-charcoal-800/60">
+    <div class="shell">
+      <div class="reveal mb-12">
+        <span class="eyebrow">Sedang tren</span>
+        <h2 class="section-heading mt-2">Pilihan komunitas</h2>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="reveal flex gap-4 items-center bg-charcoal-800 border border-charcoal-700 p-4 hover:border-violet-500/50 transition-colors">
+          <img src="/src/assets/games/rdr2.jpg" alt="Thumbnail Red Dead Redemption II" class="w-16 h-16 object-cover shrink-0" loading="lazy" />
+          <div class="min-w-0">
+            <p class="text-white font-medium truncate">Red Dead Redemption II</p>
+            <p class="text-xs text-slate-500">Aksi Petualangan</p>
+            <p class="text-sm text-emerald-400 mt-1">Rp649.000</p>
+          </div>
+        </div>
+        <div class="reveal flex gap-4 items-center bg-charcoal-800 border border-charcoal-700 p-4 hover:border-violet-500/50 transition-colors">
+          <img src="/src/assets/games/osu.jpg" alt="Thumbnail osu!" class="w-16 h-16 object-cover shrink-0" loading="lazy" />
+          <div class="min-w-0">
+            <p class="text-white font-medium truncate">osu!</p>
+            <p class="text-xs text-slate-500">Ritme</p>
+            <p class="text-sm text-emerald-400 mt-1">Gratis</p>
+          </div>
+        </div>
+        <div class="reveal flex gap-4 items-center bg-charcoal-800 border border-charcoal-700 p-4 hover:border-violet-500/50 transition-colors">
+          <img src="/src/assets/games/warcraft3.jpg" alt="Thumbnail Warcraft III: Reign of Chaos" class="w-16 h-16 object-cover shrink-0" loading="lazy" />
+          <div class="min-w-0">
+            <p class="text-white font-medium truncate">Warcraft III</p>
+            <p class="text-xs text-slate-500">Strategi</p>
+            <p class="text-sm text-emerald-400 mt-1">Rp149.500</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== NEWSLETTER ===================== -->
+  <section class="py-20 border-t border-charcoal-800/60">
+    <div class="max-w-5xl mx-auto px-6 lg:px-8">
+      <div class="reveal bg-charcoal-800 border border-charcoal-700 px-8 py-14 sm:px-14 text-center">
+        <span class="eyebrow">Newsletter</span>
+        <h2 class="font-display font-bold text-3xl sm:text-4xl text-white mt-3">Jangan lewatkan diskon &amp; rilis baru</h2>
+        <p class="mt-4 text-slate-400 max-w-xl mx-auto">Daftar untuk menerima info rilis, diskon eksklusif, dan rekomendasi mingguan langsung ke kotak masukmu.</p>
+        <form class="mt-8 flex flex-col sm:flex-row justify-center gap-3 max-w-md mx-auto" onsubmit="return false;">
+          <label for="newsletterEmail" class="sr-only">Alamat email</label>
+          <input id="newsletterEmail" type="email" required placeholder="nama@email.com" class="field flex-1" />
+          <button type="submit" class="btn-primary shrink-0">Berlangganan</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer id="footer" class="border-t border-charcoal-800/60 bg-charcoal-900/40">
+    <div class="shell py-14 sm:py-16">
+      <div class="flex flex-col gap-10 sm:flex-row sm:items-start sm:justify-between">
+        <div class="max-w-sm">
+          <a href="#home" class="flex items-center gap-2">
+            <img src="/src/assets/logo-icon.png" alt="Logo PixelPlay" class="h-7 w-7 object-contain" width="256" height="256" />
+            <span class="text-white font-display font-bold text-base tracking-tight">PixelPlay</span>
+          </a>
+          <p class="mt-4 text-sm leading-relaxed text-slate-500">
+            Marketplace digital terkurasi untuk game PC dan konsol — koleksi yang rapi, checkout yang cepat.
+          </p>
+          <ul class="mt-5 flex gap-3">
+            <li>
+              <a href="https://www.linkedin.com/in/briandicky/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Brian Dicky" class="flex size-11 items-center justify-center border border-charcoal-600 text-slate-400 transition-colors hover:border-violet-500/60 hover:text-white hover:-translate-y-0.5">
+                <svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9h4v12H3zM10 9h3.8v1.71h.05A4.2 4.2 0 0117.6 8.7c3 0 3.9 1.94 3.9 5.05V21h-4v-6.4c0-1.53-.55-2.57-1.9-2.57-1.05 0-1.67.71-1.94 1.4-.1.24-.13.58-.13.92V21h-4z"/></svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/briandicky09" target="_blank" rel="noopener noreferrer" aria-label="GitHub Brian Dicky" class="flex size-11 items-center justify-center border border-charcoal-600 text-slate-400 transition-colors hover:border-violet-500/60 hover:text-white hover:-translate-y-0.5">
+                <svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.95 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.5 9.5 0 015 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.85-2.35 4.7-4.57 4.95.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0012 2z"/></svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="grid grid-cols-2 gap-10 sm:flex sm:gap-16">
+          <nav aria-label="Toko">
+            <h2 class="text-sm font-semibold text-white">Toko</h2>
+            <ul class="mt-4 space-y-3">
+              <li><a href="#featured" class="text-sm text-slate-500 hover:text-white transition-colors">Game Unggulan</a></li>
+              <li><a href="#genres" class="text-sm text-slate-500 hover:text-white transition-colors">Genre</a></li>
+              <li><a href="#latest" class="text-sm text-slate-500 hover:text-white transition-colors">Rilis Terbaru</a></li>
+            </ul>
+          </nav>
+          <nav aria-label="Perusahaan">
+            <h2 class="text-sm font-semibold text-white">Perusahaan</h2>
+            <ul class="mt-4 space-y-3">
+              <li><a href="#why" class="text-sm text-slate-500 hover:text-white transition-colors">Tentang Kami</a></li>
+              <li><a href="#footer" class="text-sm text-slate-500 hover:text-white transition-colors">Kontak</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+      <div class="mt-12 flex flex-col items-center justify-between gap-4 border-t border-charcoal-700 pt-8 sm:flex-row">
+        <p class="text-xs text-slate-600">© 2026 PixelPlay. Seluruh hak cipta dilindungi.</p>
+        <a href="#featured" class="text-xs text-slate-500 hover:text-white transition-colors">Jelajahi katalog →</a>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>
